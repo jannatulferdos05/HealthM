@@ -1,5 +1,1 @@
-{
-  "1": {"name": "Alice", "age": 20, "roll": 1},
-  "2": {"name": "Bob", "age": 20, "roll": 2},
-  "3": {"name": "Carol", "age": 20, "roll": 3},
-  "4": {"name": "John", "age": 30, "roll": 40, "gender": "male", "dif": -10}}
+{"1": {"name": "Alice", "roll": 1, "gender": "male", "b_year": "1999", "c_year": "2025"}, "2": {"name": "string", "roll": 0, "b_year": 10, "c_year": 80, "gender": "male", "age": 70}, "3": {"name": "Carol", "roll": 3, "gender": "female", "b_year": "1989", "c_year": "2025"}, "4": {"name": "John", "roll": 40, "gender": "male", "b_year": "1979", "c_year": "2025"}}
