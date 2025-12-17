@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import pickle
 import pandas as pd
 from fastapi.responses import JSONResponse
@@ -8,6 +9,19 @@ with open("model.pkl","rb") as file:
     model = pickle.load(file)
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:5173",
+    "http://localhost",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 class User(BaseModel):
     Age: int
@@ -20,7 +34,7 @@ class User(BaseModel):
 
 @app.get("/")
 def read_root():
-    return {"Hello": "You can test you health risk using our predictor(api)"}
+    return {"Hello": "You can test your health risk using our predictor(api)"}
 @app.post("/predict")
 def predict_risk(data: User):
     test_data=pd.DataFrame([{
