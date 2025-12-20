@@ -47,4 +47,4 @@ def predict_risk(data: User):
         'Stress Level':data.Stress_Level
         }])
     prediction=model.predict(test_data)[0]
-    return JSONResponse(status_code=200,content={"prediction category":prediction})
+    return JSONResponse(status_code=200,content={"prediction_category":prediction})
